@@ -4,17 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SHP Consultoria em TI - Soluções Inovadoras para o Seu Negócio</title>
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="https://i.ibb.co/HTK99KFJ/CONSULTORIA-EM-TI-3-removebg-preview.png" type="image/x-icon">
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Google Fonts - Inter -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: 'Garet', sans-serif;
+            font-family: 'Inter', sans-serif; /* Consistente com a importação do Google Fonts */
             background-color: #f6f6f6; /* Cor de fundo principal */
             scroll-behavior: smooth; /* Habilita a rolagem suave */
         }
-        /* Animação combinada para o botão de power (giro e escala) */
+        /* Animação de giro para o ícone de power */
         @keyframes power-interact {
             0% { transform: rotate(0deg) scale(1); }
             25% { transform: rotate(90deg) scale(1.1); } /* Levemente maior */
@@ -23,19 +25,14 @@
             100% { transform: rotate(360deg) scale(1); }
         }
         .animate-power-interact {
-            animation: power-interact 2.7s ease-in-out forwards; /* Duração mais longa para mais dinamismo */
+            animation: power-interact 2.7s linear infinite; /* Alterado para 'linear' para rotação contínua e suave */
         }
         /* Classe para transição de opacidade do texto */
         .fade-transition {
             transition: opacity 0.3s ease-in-out;
         }
-        /* Estilo para mascarar as bordas da imagem com gradiente */
-        .image-mask-gradient {
-            /* Fades the image from all four sides using a very subtle radial gradient */
-            mask-image: radial-gradient(ellipse at center, black 0%, black 70%, transparent 100%),
-            linear-gradient(to left, transparent 100%, black 50%);
-            -webkit-mask-image: -webkit-radial-gradient(ellipse at center, black 0%, black 70%, transparent 100%);
-            
+        #powerIcon { /* Garante que o ícone possa ser transformado */
+            display: inline-block;
         }
     </style>
 </head>
@@ -46,7 +43,7 @@
         <div class="max-w-7xl mx-auto flex justify-between items-center">
             <!-- Logo no canto esquerdo da navegação -->
             <a href="#hero" class="flex items-center">
-                <img src="https://live.staticflickr.com/65535/54675136213_6468df15a6_h.jpg" alt="Logo SHP Consultoria em TI" class="h-16 rounded-lg">
+                <img src="https://i.ibb.co/Psj52P7r/SHP-1-sem-fundo.png" alt="Logo SHP Consultoria em TI" class="h-16 rounded-lg">
             </a>
             <!-- Links de navegação -->
             <div class="hidden md:flex space-x-8">
@@ -78,15 +75,19 @@
     <!-- Header / Hero Section -->
     <header id="hero" class="text-gray-800 py-16 px-4 sm:px-6 lg:px-8 rounded-b-lg shadow-lg" style="background-image: linear-gradient(to right, #f6f6f6 0%, #e0e0e0 100%);">
         <div class="max-w-7xl mx-auto flex flex-col items-center text-center">
-            <!-- Logo da Empresa na seção Hero - Maior com máscara de gradiente -->
-            <img src="https://live.staticflickr.com/65535/54675136213_6468df15a6_h.jpg" alt="Logo SHP Consultoria em TI" class="h-45 sm:h-50 mb-8 image-mask-gradient" style="width: 70%;" >
+            <!-- Logo da Empresa na seção Hero - Corrigido para evitar distorção -->
+            <img src="https://i.ibb.co/Psj52P7r/SHP-1-sem-fundo.png" alt="Logo SHP Consultoria em TI" class="mb-8 rounded-3xl" style="width: 70%; height: auto;">
 
             <h1 class="text-3xl sm:text-5xl font-bold mb-4 leading-tight text-gray-900">
-                <span id="productivityText" class="fade-transition">dê um Restart na sua produtividade </span>
-                <button id="powerButton" class="inline-block align-middle cursor-pointer focus:outline-none text-gray-900 hover:text-blue-800 transition-transform duration-300 transform active:scale-90">
-                    &#x23FB; <!-- Símbolo Unicode para Power -->
-                </button>
+                <span id="mainHeadlineContent" class="fade-transition">
+                    Um
+                    <span id="interactivePart" class="inline-block align-middle cursor-pointer focus:outline-none text-gray-900 hover:text-blue-800 transition-transform duration-300 transform active:scale-90">
+                        <span id="dynamicText">Restart</span> <span id="powerIcon">&#x23FB;</span>
+                    </span>
+                    para sua empresa
+                </span>
             </h1>
+            
             <p class="text-lg sm:text-xl mb-8 max-w-2xl text-gray-700">
                 Especialistas em consultoria de TI desde 2020, prontos para impulsionar seu negócio com soluções inovadoras e estratégias personalizadas.
             </p>
@@ -141,7 +142,7 @@
                         <li>Desenvolvimento de planos diretores de TI alinhados aos objetivos do seu negócio.</li>
                         <li>Análise e otimização de infraestrutura tecnológica.</li>
                         <li>Avaliação de desempenho e eficiência dos sistemas.</li>
-                    </ul>
+                        </ul>
                 </div>
 
                 <!-- Serviço: Segurança da Informação -->
@@ -330,54 +331,82 @@
             });
 
             // Power button interaction
-            const powerButton = document.getElementById('powerButton');
-            const productivityTextSpan = document.getElementById('productivityText');
-            const originalText = productivityTextSpan.textContent;
-            const originalButtonContent = powerButton.innerHTML;
+            const mainHeadlineContent = document.getElementById('mainHeadlineContent');
+            let interactivePart = document.getElementById('interactivePart');
+            let dynamicText = document.getElementById('dynamicText');
+            let powerIcon = document.getElementById('powerIcon');
 
-            if (powerButton && productivityTextSpan) {
-                powerButton.addEventListener('click', () => {
-                    // Prevent multiple clicks during animation
-                    if (powerButton.classList.contains('animate-power-interact')) {
-                        return;
+            // Store original HTML for initial state reset
+            const originalHeadlineHTML = mainHeadlineContent.innerHTML;
+
+            // Flag to prevent multiple clicks during the animation sequence
+            let isAnimating = false;
+
+            // Function to re-select elements after innerHTML changes
+            function reselectElements() {
+                interactivePart = document.getElementById('interactivePart');
+                dynamicText = document.getElementById('dynamicText');
+                powerIcon = document.getElementById('powerIcon');
+                if (interactivePart) {
+                    interactivePart.style.pointerEvents = 'auto'; // Re-enable clicks
+                    interactivePart.addEventListener('click', handleInteractivePhraseClick);
+                }
+            }
+
+            function handleInteractivePhraseClick() {
+                if (isAnimating) {
+                    return;
+                }
+                isAnimating = true;
+
+                // Disable clicks on the interactive part during animation
+                interactivePart.style.pointerEvents = 'none';
+
+                // Fade out the current headline content
+                mainHeadlineContent.classList.remove('opacity-100');
+                mainHeadlineContent.classList.add('opacity-0');
+
+                // --- FASE 1: "Reiniciando..." com ícone girando ---
+                setTimeout(() => {
+                    // Replace innerHTML with "Reiniciando... ⏻"
+                    mainHeadlineContent.innerHTML = `Reiniciando... <span id="powerIcon" class="animate-power-interact">&#x23FB;</span>`;
+                    
+                    // Re-select powerIcon after innerHTML change
+                    powerIcon = document.getElementById('powerIcon');
+                    
+                    // Ensure it's visible and animated
+                    if (powerIcon) {
+                        powerIcon.classList.remove('opacity-0');
+                        powerIcon.classList.add('opacity-100');
+                        powerIcon.classList.add('animate-power-interact'); // Start animation
                     }
+                    
+                    mainHeadlineContent.classList.remove('opacity-0');
+                    mainHeadlineContent.classList.add('opacity-100');
+                }, 300); // Duração do fade-out (0.3s)
 
-                    // Disable button clicks during animation
-                    powerButton.style.pointerEvents = 'none';
+                // --- FASE 2: Fade out "Reiniciando..." e parar animação do ícone ---
+                setTimeout(() => {
+                    mainHeadlineContent.classList.remove('opacity-100');
+                    mainHeadlineContent.classList.add('opacity-0');
+                    if (powerIcon) {
+                        powerIcon.classList.remove('animate-power-interact'); // Stop animation
+                    }
+                }, 300 + 4000); // 0.3s (fade-out inicial) + 4s (duração de "Reiniciando...")
 
-                    // Add combined spin and scale animation to button
-                    powerButton.classList.add('animate-power-interact');
+                // --- FASE 3: Nova mensagem "Sua TI no máximo..." (Persistente) ---
+                setTimeout(() => {
+                    mainHeadlineContent.textContent = "Sua TI no máximo: agende sua consultoria.";
+                    mainHeadlineContent.classList.remove('opacity-0');
+                    mainHeadlineContent.classList.add('opacity-100');
+                    // No need to re-enable clicks or reset isAnimating here, as it's persistent.
+                    // The page needs to be reloaded to go back to the original state.
+                }, 300 + 4000 + 300); // 0.3s (fade-out inicial) + 4s (Reiniciando) + 0.3s (fade-out Reiniciando)
+            }
 
-                    // Start text fade out
-                    productivityTextSpan.classList.remove('opacity-100');
-                    productivityTextSpan.classList.add('opacity-0');
-
-                    // After text fades out, change content and fade in "Reiniciando..."
-                    setTimeout(() => {
-                        productivityTextSpan.textContent = "Reiniciando...";
-                        powerButton.innerHTML = ''; // Hide button symbol temporarily
-                        productivityTextSpan.classList.remove('opacity-0');
-                        productivityTextSpan.classList.add('opacity-100');
-                    }, 600); // Matches CSS transition duration for fade-out
-
-                    // After "Reiniciando..." is visible for a longer period, fade it out
-                    setTimeout(() => {
-                        productivityTextSpan.classList.remove('opacity-100');
-                        productivityTextSpan.classList.add('opacity-0');
-                    }, 2100); // 300ms (fade-in) + 1800ms (visible duration) = 2100ms
-
-                    // After second text fades out, bring back original text and button
-                    setTimeout(() => {
-                        productivityTextSpan.textContent = originalText;
-                        powerButton.innerHTML = originalButtonContent; // Show button symbol again
-                        productivityTextSpan.classList.remove('opacity-0');
-                        productivityTextSpan.classList.add('opacity-100');
-
-                        // Remove animation class and re-enable button after all transitions
-                        powerButton.classList.remove('animate-power-interact');
-                        powerButton.style.pointerEvents = 'auto';
-                    }, 2400); // 2100ms (start fade out) + 300ms (fade-out duration) = 2400ms
-                });
+            // Attach initial event listener to interactivePart
+            if (interactivePart) {
+                interactivePart.addEventListener('click', handleInteractivePhraseClick);
             }
         });
     </script>
