@@ -9,10 +9,13 @@
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Google Fonts - Inter -->
-
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome CDN para ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" xintegrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0V4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
     <style>
         body {
-            font-family: 'Garet', sans-serif; /* Consistente com a importação do Google Fonts */
+            font-family: 'Inter', sans-serif; /* Consistente com a importação do Google Fonts */
             background-color: #f6f6f6; /* Cor de fundo principal */
             scroll-behavior: smooth; /* Habilita a rolagem suave */
         }
@@ -31,7 +34,8 @@
         .fade-transition {
             transition: opacity 0.3s ease-in-out;
         }
-        #powerIcon { /* Garante que o ícone possa ser transformado */
+        /* Estilo para o ícone de power Font Awesome */
+        #powerIconFA { /* Garante que o ícone possa ser transformado */
             display: inline-block;
         }
     </style>
@@ -73,16 +77,15 @@
     </nav>
 
     <!-- Header / Hero Section -->
-    <header id="hero" class="text-gray-800 py-16 px-4 sm:px-6 lg:px-8 rounded-b-lg shadow-lg" style="background-image: linear-gradient(to right, #f6f6f6 0%, #e0e0e0 100%);">
+    <header id="hero" class="text-gray-800 py-11 px-4 sm:px-6 lg:px-8 rounded-b-lg shadow-lg" style="background-image: linear-gradient(to right, #f6f6f6 0%, #e0e0e0 100%);">
         <div class="max-w-7xl mx-auto flex flex-col items-center text-center">
-            <!-- Logo da Empresa na seção Hero - Corrigido para evitar distorção -->
             <img src="https://i.ibb.co/Psj52P7r/SHP-1-sem-fundo.png" alt="Logo SHP Consultoria em TI" class="mb-8 rounded-3xl" style="width: 70%; height: auto;">
 
             <h1 class="text-3xl sm:text-5xl font-bold mb-4 leading-tight text-gray-900">
                 <span id="mainHeadlineContent" class="fade-transition">
                     Um
-                    <span id="interactivePart" class="inline-block align-middle cursor-pointer focus:outline-none text-blue-800 hover:text-gray-900 transition-transform duration-300 transform active:scale-90">
-                        <span id="dynamicText">Restart</span> <span id="powerIcon">&#x23FB;</span>
+                    <span id="interactivePart" class="inline-block align-middle cursor-pointer focus:outline-none text-blue-800 hover:text-gray-500 transition-transform duration-300 transform active:scale-90">
+                        <span id="dynamicText">Restart</span> <i id="powerIconFA" class="fas fa-power-off"></i>
                     </span>
                     para sua empresa
                 </span>
@@ -101,57 +104,57 @@
     <section class="py-16 px-4 sm:px-6 lg:px-8 bg-white">
         <div class="max-w-7xl mx-auto">
             <h2 class="text-3xl sm:text-4xl font-bold text-center mb-12 text-gray-900">
-                ✨ Por Que Escolher Nossos Serviços?
+                <i class="fas fa-sparkles mr-3"></i> Por Que Escolher Nossos Serviços?
             </h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                 <div class="bg-gray-50 p-6 rounded-lg shadow-md hover:shadow-xl transition duration-300 ease-in-out transform hover:-translate-y-1">
                     <h3 class="text-xl font-semibold mb-3 text-gray-800">Experiência Comprovada</h3>
-                    <p class="text-gray-700">Nossa equipe é formada por profissionais com vasto conhecimento no mercado de TI.</p>
+                    <p class="text-gray-700">Nossa equipe é composta por profissionais com vasto conhecimento nas diversas soluções do mercado de TI.</p>
                 </div>
                 <div class="bg-gray-50 p-6 rounded-lg shadow-md hover:shadow-xl transition duration-300 ease-in-out transform hover:-translate-y-1">
                     <h3 class="text-xl font-semibold mb-3 text-gray-800">Soluções Personalizadas</h3>
-                    <p class="text-gray-700">Entendemos que cada negócio é único e criamos estratégias sob medida para suas necessidades.</p>
+                    <p class="text-gray-700">Na SHP sabemos que cada negócio é único e criamos estratégias sob medida de acordo com suas necessidades.</p>
                 </div>
                 <div class="bg-gray-50 p-6 rounded-lg shadow-md hover:shadow-xl transition duration-300 ease-in-out transform hover:-translate-y-1">
                     <h3 class="text-xl font-semibold mb-3 text-gray-800">Foco em Resultados</h3>
-                    <p class="text-gray-700">Nosso objetivo é garantir que sua empresa atinja seus objetivos com o máximo de eficiência e retorno sobre o investimento.</p>
+                    <p class="text-gray-700">Nosso objetivo é garantir que sua empresa alcance seus objetivos com o máximo de retorno sobre o investimento.</p>
                 </div>
                 <div class="bg-gray-50 p-6 rounded-lg shadow-md hover:shadow-xl transition duration-300 ease-in-out transform hover:-translate-y-1">
                     <h3 class="text-xl font-semibold mb-3 text-gray-800">Suporte Contínuo</h3>
-                    <p class="text-gray-700">Estamos ao seu lado em cada etapa, desde o planejamento até a implementação e acompanhamento.</p>
+                    <p class="text-gray-700">Estamos ao seu lado em cada etapa, no planejamento, organização, implementação e controle.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Seção: Nossos Serviços de Consultoria de TI -->
-    <section id="services" class="py-16 px-4 sm:px-6 lg:px-8 bg-gray-100">
+    <!-- Seção: Nossos Serviços-->
+    <section id="services" class="py-10 px-4 sm:px-6 lg:px-8 bg-gray-100">
         <div class="max-w-7xl mx-auto">
             <h2 class="text-3xl sm:text-4xl font-bold text-center mb-12 text-gray-900">
-                📈 Nossos Serviços
+                <i class="fas fa-chart-line mr-3"></i> Nossos Serviços
             </h2>
             <p class="text-center text-lg mb-10 max-w-3xl mx-auto text-gray-700">
-                Entendemos as complexidades do ambiente de TI e oferecemos um leque de serviços para otimizar suas operações, aumentar a segurança e impulsionar o crescimento.
+                As complexidades do ambiente empresarial são diversas. <br>Assim como os nossos serviços para otimizar suas operações.
             </p>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Serviço: Consultoria Estratégica de TI -->
+                <!-- Serviço: Implementação Inicial -->
                 <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition duration-300 ease-in-out transform hover:-translate-y-1">
-                    <h3 class="text-2xl font-semibold mb-4 text-gray-800">Consultoria Estratégica de TI</h3>
+                    <h3 class="text-2xl font-semibold mb-4 text-gray-800">Implementação de Infraestrutura Inicial</h3>
                     <ul class="list-disc list-inside text-gray-700 space-y-2">
-                        <li>Desenvolvimento de planos diretores de TI alinhados aos objetivos do seu negócio.</li>
-                        <li>Análise e otimização de infraestrutura tecnológica.</li>
-                        <li>Avaliação de desempenho e eficiência dos sistemas.</li>
+                        <li>Assessoria na compra de Computadores, celulares e outros equipamentos para um pontapé inicial.</li>
+                        <li>Recomendação e implementação de sistemas básicos de fácil manuseio.</li>
+                        <li>Avaliação posterior de desempenho e eficiência dos sistemas e equipamentos.</li>
                         </ul>
                 </div>
 
-                <!-- Serviço: Segurança da Informação -->
+                <!-- Serviço: Melhoria de rede local (Wi-fi e Cabeada) -->
                 <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition duration-300 ease-in-out transform hover:-translate-y-1">
-                    <h3 class="text-2xl font-semibold mb-4 text-gray-800">Segurança da Informação</h3>
+                    <h3 class="text-2xl font-semibold mb-4 text-gray-800">Melhoria de rede local <br>(Wi-fi e Cabeada)</h3>
                     <ul class="list-disc list-inside text-gray-700 space-y-2">
-                        <li>Implementação de políticas de segurança robustas.</li>
-                        <li>Análise de vulnerabilidades e testes de penetração.</li>
-                        <li>Recuperação de desastres e planos de continuidade de negócios.</li>
+                        <li>Instalação de cabos e roteadores melhores.</li>
+                        <li>Para as empresas mais bem consolidadas, realizamos implementação de redes Mesh.</li>
+                        <li>Implementação de Switches para uma melhor distribuição de rede.</li>
                     </ul>
                 </div>
 
@@ -184,21 +187,42 @@
                         <li>Monitoramento contínuo de sistemas para garantir alta disponibilidade.</li>
                     </ul>
                 </div>
+
+                            <!-- Serviço: Segurança da Informação -->
+                <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition duration-300 ease-in-out transform hover:-translate-y-1">
+                    <h3 class="text-2xl font-semibold mb-4 text-gray-800">Segurança da Informação</h3>
+                    <ul class="list-disc list-inside text-gray-700 space-y-2">
+                        <li>Implementação de políticas de segurança robustas.</li>
+                        <li>Análise de vulnerabilidades e testes de penetração.</li>
+                        <li>Recuperação de desastres e planos de continuidade de negócios.</li>
+                    </ul>
+                </div>
             </div>
 
-            <div class="text-center mt-12">
-                <a href="#contact" class="bg-blue-800 text-white hover:bg-blue-700 font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105">
-                    Veja Todos os Nossos Serviços
-                </a>
-            </div>
+    <!-- Seção Placeholder: Cotação -->
+    <section id="quote" class="py-10 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto text-center">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-5 text-gray-900">
+                <i class="fas fa-dollar-sign mr-3"></i> Solicite uma Cotação
+            </h2>
+            <p class="text-lg text-gray-700 max-w-3xl mx-auto mb-8">
+                Interessado em nossos serviços? Preencha o formulário abaixo para solicitar uma cotação personalizada. Nossa equipe entrará em contato em breve para entender suas necessidades e apresentar a melhor solução para sua empresa.
+            </p>
+            <a href="#contact" class="bg-blue-800 text-white hover:bg-blue-700 font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105">
+                Solicitar Cotação Agora!
+            </a>
         </div>
+    </section>
+
+        </div>
+
     </section>
 
     <!-- Seção Placeholder: Sobre -->
     <section id="about" class="py-16 px-4 sm:px-6 lg:px-8 bg-white">
         <div class="max-w-7xl mx-auto text-center">
             <h2 class="text-3xl sm:text-4xl font-bold mb-8 text-gray-900">
-                ℹ️ Sobre Nós
+                <i class="fas fa-info-circle mr-3"></i> Sobre Nós
             </h2>
             <p class="text-lg text-gray-700 max-w-3xl mx-auto">
                 A SHP Consultoria em TI é uma empresa dedicada a fornecer soluções tecnológicas inovadoras e estratégicas para empresas de todos os portes. Com uma equipe de especialistas apaixonados por tecnologia e resultados, nosso objetivo é ser o seu parceiro de confiança na jornada de transformação digital.
@@ -213,7 +237,7 @@
     <section id="target-audience" class="py-16 px-4 sm:px-6 lg:px-8 bg-gray-100">
         <div class="max-w-7xl mx-auto text-center">
             <h2 class="text-3xl sm:text-4xl font-bold mb-8 text-gray-900">
-                🎯 Nosso Público Alvo
+                <i class="fas fa-bullseye mr-3"></i> Nosso Público Alvo
             </h2>
             <p class="text-lg text-gray-700 max-w-3xl mx-auto">
                 Atendemos empresas de diversos setores que buscam otimizar suas operações, aumentar a segurança de dados, modernizar sua infraestrutura ou implementar novas tecnologias. Nosso foco está em pequenas e médias empresas (PMEs) que desejam escalar seus negócios com o apoio de uma TI robusta e eficiente, bem como grandes corporações que necessitam de consultoria especializada para projetos complexos e estratégicos.
@@ -225,7 +249,7 @@
     <section class="py-16 px-4 sm:px-6 lg:px-8 bg-white">
         <div class="max-w-7xl mx-auto">
             <h2 class="text-3xl sm:text-4xl font-bold text-center mb-12 text-gray-900">
-                🗣️ O Que Nossos Clientes Dizem
+                <i class="fas fa-comments mr-3"></i> O Que Nossos Clientes Dizem
             </h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div class="bg-gray-50 p-6 rounded-lg shadow-md border-l-4 border-gray-400">
@@ -240,26 +264,11 @@
             </div>
     </section>
 
-    <!-- Seção Placeholder: Cotação -->
-    <section id="quote" class="py-16 px-4 sm:px-6 lg:px-8 bg-white">
-        <div class="max-w-7xl mx-auto text-center">
-            <h2 class="text-3xl sm:text-4xl font-bold mb-8 text-gray-900">
-                💰 Solicite uma Cotação
-            </h2>
-            <p class="text-lg text-gray-700 max-w-3xl mx-auto mb-8">
-                Interessado em nossos serviços? Preencha o formulário abaixo para solicitar uma cotação personalizada. Nossa equipe entrará em contato em breve para entender suas necessidades e apresentar a melhor solução para sua empresa.
-            </p>
-            <a href="#contact" class="bg-blue-800 text-white hover:bg-blue-700 font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105">
-                Solicitar Cotação Agora!
-            </a>
-        </div>
-    </section>
-
     <!-- Seção: Entre em Contato -->
     <section id="contact" class="py-16 px-4 sm:px-6 lg:px-8 bg-gray-100 rounded-t-lg shadow-inner">
         <div class="max-w-3xl mx-auto text-center">
             <h2 class="text-3xl sm:text-4xl font-bold mb-8 text-gray-900">
-                ✉️ Entre em Contato
+                <i class="fas fa-envelope mr-3"></i> Entre em Contato
             </h2>
             <p class="text-lg mb-8 text-gray-700">
                 Pronto para transformar a TI da sua empresa? Fale conosco!
@@ -334,10 +343,10 @@
             const mainHeadlineContent = document.getElementById('mainHeadlineContent');
             let interactivePart = document.getElementById('interactivePart');
             let dynamicText = document.getElementById('dynamicText');
-            let powerIcon = document.getElementById('powerIcon');
+            let powerIconFA = document.getElementById('powerIconFA');
 
             // Store original HTML for initial state reset
-            const originalHeadlineHTML = mainHeadlineContent.innerHTML;
+            // const originalHeadlineHTML = mainHeadlineContent.innerHTML; // REMOVIDA: Variável não utilizada
 
             // Flag to prevent multiple clicks during the animation sequence
             let isAnimating = false;
@@ -346,7 +355,7 @@
             function reselectElements() {
                 interactivePart = document.getElementById('interactivePart');
                 dynamicText = document.getElementById('dynamicText');
-                powerIcon = document.getElementById('powerIcon');
+                powerIconFA = document.getElementById('powerIconFA');
                 if (interactivePart) {
                     interactivePart.style.pointerEvents = 'auto'; // Re-enable clicks
                     interactivePart.addEventListener('click', handleInteractivePhraseClick);
@@ -368,17 +377,13 @@
 
                 // --- FASE 1: "Reiniciando..." com ícone girando ---
                 setTimeout(() => {
-                    // Replace innerHTML with "Reiniciando... ⏻"
-                    mainHeadlineContent.innerHTML = `Reiniciando... <span id="powerIcon" class="animate-power-interact">&#x23FB;</span>`;
-                    
-                    // Re-select powerIcon after innerHTML change
-                    powerIcon = document.getElementById('powerIcon');
-                    
+                    mainHeadlineContent.innerHTML = `Reiniciando... <i id="powerIconFA" class="fas fa-power-off text-blue-800 animate-power-interact"></i>`;
+                    powerIconFA = document.getElementById('powerIconFA');
                     // Ensure it's visible and animated
-                    if (powerIcon) {
-                        powerIcon.classList.remove('opacity-0');
-                        powerIcon.classList.add('opacity-100');
-                        powerIcon.classList.add('animate-power-interact'); // Start animation
+                    if (powerIconFA) {
+                        powerIconFA.classList.remove('opacity-0');
+                        powerIconFA.classList.add('opacity-100');
+                        powerIconFA.classList.add('animate-power-interact'); // Start animation
                     }
                     
                     mainHeadlineContent.classList.remove('opacity-0');
@@ -389,10 +394,10 @@
                 setTimeout(() => {
                     mainHeadlineContent.classList.remove('opacity-100');
                     mainHeadlineContent.classList.add('opacity-0');
-                    if (powerIcon) {
-                        powerIcon.classList.remove('animate-power-interact'); // Stop animation
+                    if (powerIconFA) {
+                        powerIconFA.classList.remove('animate-power-interact'); // Stop animation
                     }
-                }, 300 + 4000); // 0.3s (fade-out inicial) + 4s (duração de "Reiniciando...")
+                }, 300 + 1500); // 0.3s (fade-out inicial) + 4s (duração de "Reiniciando...")
 
                 // --- FASE 3: Nova mensagem "Sua TI no máximo..." (Persistente) ---
                 setTimeout(() => {
@@ -401,7 +406,7 @@
                     mainHeadlineContent.classList.add('opacity-100');
                     // No need to re-enable clicks or reset isAnimating here, as it's persistent.
                     // The page needs to be reloaded to go back to the original state.
-                }, 300 + 4000 + 300); // 0.3s (fade-out inicial) + 4s (Reiniciando) + 0.3s (fade-out Reiniciando)
+                }, 300 + 1500 + 300); // 0.3s (fade-out inicial) + 4s (Reiniciando) + 0.3s (fade-out Reiniciando)
             }
 
             // Attach initial event listener to interactivePart
